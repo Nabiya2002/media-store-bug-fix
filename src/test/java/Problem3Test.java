@@ -6,12 +6,18 @@ import static org.junit.Assert.*;
 public class Problem3Test {
     @Test
     public void catchTheBugInBook() {
-        // quiz
+        BookFiction b = new BookFiction("t1", "au1", "g1");
+        BookFiction bc = new BookFiction(b);
+        bc.setTitle("t12");
+        assertTrue(b.equals(bc));
     }
 
     @Test
     public void catchTheBugInMovie() {
-        // quiz
+        MovieAction m = new MovieAction("PG13", "ti1");
+        MovieAction mc = new MovieAction(m);
+        mc.setRating("PG");
+        assertTrue(m.equals(mc));
     }
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
@@ -133,5 +139,4 @@ public class Problem3Test {
         }
         assertEquals(expect, fees);
     }
-
 }
